@@ -48,7 +48,7 @@ public class JdbcToMybatis {
             LprodVO lvo = session.selectOne("jdbc.getLpord", lgu);
             
             if(lvo != null) {
-                System.out.println("중복된 데이터가 있습니다.");
+                System.out.println("중복된 데이터가 있습니다.류빵구");
             } else {
                 System.out.print("lprod_nm 입력 >> ");
                 String lnm = scan.next();
