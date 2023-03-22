@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jdbc">
+
+	<insert id="insertLprod" parameterType="lprodVo">
+		insert into lprod (lprod_id, lprod_gu, lprod_nm)
+		values ((select max(lprod_id)+1 from lprod), #{lprod_gu}, #{lprod_nm})
+	</insert>
+	
+	<select id="getLpord" parameterType="String" resultType="lprodVo">
+		select * from lprod where lprod_gu = #{lprod_gu}
+	</select>
+
+</mapper>
